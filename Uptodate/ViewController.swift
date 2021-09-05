@@ -43,12 +43,12 @@ class ViewController: UIViewController {
             calendarButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: padding),
             calendarButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding),
             calendarButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding),
-            calendarButton.heightAnchor.constraint(equalToConstant: 100),
+            calendarButton.heightAnchor.constraint(equalToConstant: 10),
             
             ocrTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: padding),
             ocrTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding),
             ocrTextView.bottomAnchor.constraint(equalTo: scanButton.topAnchor, constant: -padding),
-            ocrTextView.heightAnchor.constraint(equalToConstant: 300),
+            ocrTextView.heightAnchor.constraint(equalToConstant: 100),
             
             scanImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: padding),
             scanImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),

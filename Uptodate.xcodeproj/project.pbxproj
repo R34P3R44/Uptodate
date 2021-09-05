@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		BE1B7B31266843AD00169C4D /* uptoDate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uptoDate-Bridging-Header.h"; sourceTree = "<group>"; };
-		BE1B7B32266843AD00169C4D /* Uptodate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uptodate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE1B7B32266843AD00169C4D /* Uptodate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Uptodate.app; path = "/Users/r34p3r/Uptodate/build/Debug-iphoneos/Uptodate.app"; sourceTree = "<absolute>"; };
 		BE1B7B33266843AD00169C4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE1B7B372668443400169C4D /* OcrTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrTextView.swift; sourceTree = "<group>"; };
 		BE1B7B392668446B00169C4D /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
@@ -28,7 +28,6 @@
 		BE69851F2668E909005F05FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE69852326690651005F05FC /* CalendarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarButton.swift; sourceTree = "<group>"; };
 		BE7F8BF626E56B9600DDF8A4 /* Uptodate.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = Uptodate.app; sourceTree = "<group>"; };
-		BEBB3FB126E4E47000ED94D6 /* Uptodate.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Uptodate.app; path = "../../Library/Developer/Xcode/DerivedData/Uptodate-cvjhlvyuqyqscycklyyjnpfqvuxa/Build/Products/Debug-iphoneos/Uptodate.app"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +44,13 @@
 		BE1B7AF8266842E100169C4D = {
 			isa = PBXGroup;
 			children = (
+				BEBB3FB026E4E46000ED94D6 /* Uptodate */,
+			);
+			sourceTree = "<group>";
+		};
+		BEBB3FB026E4E46000ED94D6 /* Uptodate */ = {
+			isa = PBXGroup;
+			children = (
 				BE69851F2668E909005F05FC /* Info.plist */,
 				BE1B7B31266843AD00169C4D /* uptoDate-Bridging-Header.h */,
 				BE1B7B33266843AD00169C4D /* AppDelegate.swift */,
@@ -55,15 +61,6 @@
 				BE6985192668E38D005F05FC /* SceneDelegate.swift */,
 				BE69851B2668E3B4005F05FC /* ViewController.swift */,
 				BE7F8BF626E56B9600DDF8A4 /* Uptodate.app */,
-				BEBB3FB026E4E46000ED94D6 /* Uptodate */,
-				BE1B7B32266843AD00169C4D /* Uptodate.app */,
-			);
-			sourceTree = "<group>";
-		};
-		BEBB3FB026E4E46000ED94D6 /* Uptodate */ = {
-			isa = PBXGroup;
-			children = (
-				BEBB3FB126E4E47000ED94D6 /* Uptodate.app */,
 			);
 			path = Uptodate;
 			sourceTree = "<group>";
