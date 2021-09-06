@@ -38,17 +38,17 @@ class ViewController: UIViewController {
             scanButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: padding),
             scanButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding),
             scanButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding),
-            scanButton.heightAnchor.constraint(equalToConstant: 10),
+            scanButton.heightAnchor.constraint(equalToConstant: 50),
             
             calendarButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: padding),
             calendarButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding),
-            calendarButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding),
-            calendarButton.heightAnchor.constraint(equalToConstant: 10),
+            calendarButton.bottomAnchor.constraint(equalTo: scanButton.topAnchor, constant: -padding),
+            calendarButton.heightAnchor.constraint(equalToConstant: 50),
             
             ocrTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: padding),
             ocrTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding),
-            ocrTextView.bottomAnchor.constraint(equalTo: scanButton.topAnchor, constant: -padding),
-            ocrTextView.heightAnchor.constraint(equalToConstant: 100),
+            ocrTextView.bottomAnchor.constraint(equalTo: calendarButton.topAnchor, constant: -padding),
+            ocrTextView.heightAnchor.constraint(equalToConstant: 200),
             
             scanImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: padding),
             scanImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
