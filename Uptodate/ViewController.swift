@@ -20,7 +20,7 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
     }
     
     let eventStore = EKEventStore()
-    var time  = Date()
+    var time = Date()
     
     
     
@@ -37,9 +37,9 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
                     DispatchQueue.main.async {
                         if (granted) && (error == nil) {
                             let event = EKEvent(eventStore: self.eventStore)
-                            event.title = "Keynote Apple"
+                            event.title = ""
                             event.startDate = self.time
-                            event.url = URL(string: "https://apple.com")
+                            event.url = URL(string: "")
                             event.endDate = self.time
                             let eventController = EKEventEditViewController()
                             eventController.event = event
