@@ -23,22 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4F72E3B8-5E56-4B3F-A8E7-034BDA74A592"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "uptoDate/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "configure()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C96EF4F7-2CD8-40E5-950F-8C3D72E213DB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -50,6 +34,84 @@
             endingLineNumber = "9"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C8D6004C-C341-4F22-BEF6-102385EDF92F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Uptodate/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "C8D6004C-C341-4F22-BEF6-102385EDF92F - b673b657fbb9cfc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Uptodate.AppDelegate.__allocating_init() -&gt; Uptodate.AppDelegate"
+                  moduleName = "Uptodate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/r34p3r/Uptodate/Uptodate/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "C8D6004C-C341-4F22-BEF6-102385EDF92F - 46f31a6002253bb5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Uptodate.AppDelegate.init() -&gt; Uptodate.AppDelegate"
+                  moduleName = "Uptodate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/r34p3r/Uptodate/Uptodate/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  uuid = "C8D6004C-C341-4F22-BEF6-102385EDF92F - c58ffb2b65033a39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Uptodate.AppDelegate.__deallocating_deinit"
+                  moduleName = "Uptodate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/r34p3r/Uptodate/Uptodate/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "C8D6004C-C341-4F22-BEF6-102385EDF92F - c84aba150a5212fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "Uptodate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/r34p3r/Uptodate/Uptodate/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

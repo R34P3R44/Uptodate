@@ -31,20 +31,20 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
     private var ocrRequest = VNRecognizeTextRequest(completionHandler: nil)
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        //super.viewDidLoad()
         eventStore.requestAccess( to: EKEntityType.event, completion:{(granted, error) in
                     DispatchQueue.main.async {
                         if (granted) && (error == nil) {
-                            let event = EKEvent(eventStore: self.eventStore)
-                            event.title = ""
-                            event.startDate = self.time
-                            event.url = URL(string: "")
-                            event.endDate = self.time
-                            let eventController = EKEventEditViewController()
-                            eventController.event = event
-                            eventController.eventStore = self.eventStore
-                            eventController.editViewDelegate = self
-                            self.present(eventController, animated: true, completion: nil)
+                            //let event = EKEvent(eventStore: self.eventStore)
+                            //event.title = ""
+                            //event.startDate = self.time
+                            //event.url = URL(string: "")
+                            //event.endDate = self.time
+                            //let eventController = EKEventEditViewController()
+                            //eventController.event = event
+                            //eventController.eventStore = self.eventStore
+                            //eventController.editViewDelegate = self
+                            //self.present(eventController, animated: true, completion: nil)
                             
                         }
                     }

@@ -23,7 +23,6 @@
 		BE1B7B392668446B00169C4D /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
 		BE1B7B3B266844AF00169C4D /* ScanImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageView.swift; sourceTree = "<group>"; };
 		BE40A3B026EAC2EA00D19892 /* Uptodate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uptodate.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE40A3B126EAC9D900D19892 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		BE6985192668E38D005F05FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BE69851B2668E3B4005F05FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE69851F2668E909005F05FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +52,6 @@
 		BEBB3FB026E4E46000ED94D6 /* Uptodate */ = {
 			isa = PBXGroup;
 			children = (
-				BE40A3B126EAC9D900D19892 /* Storyboard.storyboard */,
 				BE69851F2668E909005F05FC /* Info.plist */,
 				BE1B7B31266843AD00169C4D /* uptoDate-Bridging-Header.h */,
 				BE1B7B33266843AD00169C4D /* AppDelegate.swift */,
