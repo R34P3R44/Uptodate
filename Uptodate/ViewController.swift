@@ -10,51 +10,51 @@ import Vision
 import VisionKit
 import EventKit
 import EventKitUI
+import SwiftUI
 
-class ViewController: UIViewController, EKEventEditViewDelegate {
+class ViewController: UIViewController, EKEventEditViewDelegate, UINavigationControllerDelegate {
     
     
-    func eventEditViewController( _ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+    @objc private var scanButton = ScanButton(frame: .zero)
+    @objc private var calendarButton = CalendarButton(frame: .zero)
+    private var scanImageView = ScanImageView(frame: .zero)
+    private var ocrTextView = OcrTextView(frame: .zero, textContainer: nil)
+    private var ocrRequest = VNRecognizeTextRequest(completionHandler: nil)
+    
+    //This function handles the completion of the created event.
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         controller.dismiss(animated: true, completion: nil)
     }
     
     let eventStore = EKEventStore()
     var time = Date()
     
-    
-    
-    
-    private var scanButton = ScanButton(frame: .zero)
-    private var calendarButton = CalendarButton(frame: .zero)
-    private var scanImageView = ScanImageView(frame: .zero)
-    private var ocrTextView = OcrTextView(frame: .zero, textContainer: nil)
-    private var ocrRequest = VNRecognizeTextRequest(completionHandler: nil)
-    
+    //This function checks if user granted access to Calendar plus creates an event with the below details
     override func viewDidLoad() {
-        //super.viewDidLoad()
+        super.viewDidLoad()
         eventStore.requestAccess( to: EKEntityType.event, completion:{(granted, error) in
                     DispatchQueue.main.async {
                         if (granted) && (error == nil) {
-                            //let event = EKEvent(eventStore: self.eventStore)
-                            //event.title = ""
-                            //event.startDate = self.time
-                            //event.url = URL(string: "")
-                            //event.endDate = self.time
-                            //let eventController = EKEventEditViewController()
-                            //eventController.event = event
-                            //eventController.eventStore = self.eventStore
-                            //eventController.editViewDelegate = self
-                            //self.present(eventController, animated: true, completion: nil)
+                            let event = EKEvent(eventStore: self.eventStore)
+                            event.title = ""
+                            event.startDate = self.time
+                            event.url = URL(string: "")
+                            event.endDate = self.time
+                            let eventController = EKEventEditViewController()
+                            eventController.event = event
+                            eventController.eventStore = self.eventStore
+                            eventController.editViewDelegate = self
+                            self.present(eventController, animated: true, completion: nil)
                             
                         }
                     }
                 })
-        
+    
         configure()
         configureOCR()
     }
 
-    
+    //This function prepends the below items on screen
     private func configure() {
         view.addSubview(scanImageView)
         view.addSubview(ocrTextView)
@@ -85,16 +85,16 @@ class ViewController: UIViewController, EKEventEditViewDelegate {
         ])
         
         scanButton.addTarget(self, action: #selector(scanDocument), for: .touchUpInside)
-        //calendarButton.addTarget(self, action: #selector(scanDocument), for: .touchUpInside)
+        calendarButton.addTarget(self, action: #selector(viewCalendar), for: .touchUpInside)
     }
     
     
-    /*@objc private func scanDocument() {
-        let scanVC = VNDocumentCameraViewController()
-        scanVC.delegate = self
-        present(scanVC, animated: true)
+    @objc private func viewCalendar() {
+        let eventStore = EKEventEditViewController()
+        eventStore.delegate = self
+        present(eventStore, animated: true)
     }
-     */
+    
     
     @objc private func scanDocument() {
         let scanVC = VNDocumentCameraViewController()
