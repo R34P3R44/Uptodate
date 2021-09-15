@@ -30,7 +30,7 @@ class ViewController: UIViewController, EKEventEditViewDelegate, UINavigationCon
     var time = Date()
     
     //This function checks if user granted access to Calendar plus creates an event with the below details
-    override func viewDidLoad() {
+    /*override func viewDidLoad() {
         super.viewDidLoad()
         eventStore.requestAccess( to: EKEntityType.event, completion:{(granted, error) in
                     DispatchQueue.main.async {
@@ -52,7 +52,7 @@ class ViewController: UIViewController, EKEventEditViewDelegate, UINavigationCon
     
         configure()
         configureOCR()
-    }
+    }*/
 
     //This function prepends the below items on screen
     private func configure() {
@@ -90,9 +90,32 @@ class ViewController: UIViewController, EKEventEditViewDelegate, UINavigationCon
     
     
     @objc private func viewCalendar() {
-        let eventStore = EKEventEditViewController()
+        let eventStore = EKEventEditViewController(eventStore: eventVC.eventStore)
         eventStore.delegate = self
         present(eventStore, animated: true)
+        func viewDidLoad() {
+            super.viewDidLoad()
+            eventStore.requestAccess( to: EKEntityType.event, completion:{(granted, error) in
+                        DispatchQueue.main.async {
+                            if (granted) && (error == nil) {
+                                let event = EKEvent(eventStore: self.eventStore)
+                                event.title = ""
+                                event.startDate = self.time
+                                event.url = URL(string: "")
+                                event.endDate = self.time
+                                let eventController = EKEventEditViewController()
+                                eventController.event = event
+                                eventController.eventStore = self.eventStore
+                                eventController.editViewDelegate = self
+                                self.present(eventController, animated: true, completion: nil)
+                                
+                            }
+                        }
+                    })
+        
+            configure()
+            configureOCR()
+        }
     }
     
     
