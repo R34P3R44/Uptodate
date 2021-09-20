@@ -21,13 +21,48 @@ class ViewController: UIViewController, EKEventEditViewDelegate, UINavigationCon
     private var ocrTextView = OcrTextView(frame: .zero, textContainer: nil)
     private var ocrRequest = VNRecognizeTextRequest(completionHandler: nil)
     
+    
+    let eventStore = EKEventStore()
+    var time = Date()
+    
+    //This functions handles the calendar view and authorisation
+    @objc private func viewCalendar() {
+        //let eventVC = EKEventEditViewController()
+        //eventVC.editViewDelegate = self
+        //eventVC.eventStore = EKEventStore()
+        let eventStore = EKEventEditViewController()
+        eventStore.delegate = self
+        present(eventStore, animated: true)
+        func viewDidLoad() {
+            super.viewDidLoad()
+            eventStore.requestAccess( to: EKEntityType.event, completion:{(granted, error) in
+                        DispatchQueue.main.async {
+                            if (granted) && (error == nil) {
+                                let event = EKEvent(eventStore: self.eventStore)
+                                event.title = ""
+                                event.startDate = self.time
+                                event.url = URL(string: "")
+                                event.endDate = self.time
+                                let eventController = EKEventEditViewController()
+                                eventController.event = event
+                                eventController.eventStore = self.eventStore
+                                eventController.editViewDelegate = self
+                                self.present(eventController, animated: true, completion: nil)
+                                
+                            }
+                        }
+                    })
+        
+            configure()
+            configureOCR()
+        }
+    }
+    
     //This function handles the completion of the created event.
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         controller.dismiss(animated: true, completion: nil)
     }
     
-    let eventStore = EKEventStore()
-    var time = Date()
     
     //This function checks if user granted access to Calendar plus creates an event with the below details
     /*override func viewDidLoad() {
@@ -88,35 +123,6 @@ class ViewController: UIViewController, EKEventEditViewDelegate, UINavigationCon
         calendarButton.addTarget(self, action: #selector(viewCalendar), for: .touchUpInside)
     }
     
-    
-    @objc private func viewCalendar() {
-        let eventStore = EKEventEditViewController(eventStore: eventVC.eventStore)
-        eventStore.delegate = self
-        present(eventStore, animated: true)
-        func viewDidLoad() {
-            super.viewDidLoad()
-            eventStore.requestAccess( to: EKEntityType.event, completion:{(granted, error) in
-                        DispatchQueue.main.async {
-                            if (granted) && (error == nil) {
-                                let event = EKEvent(eventStore: self.eventStore)
-                                event.title = ""
-                                event.startDate = self.time
-                                event.url = URL(string: "")
-                                event.endDate = self.time
-                                let eventController = EKEventEditViewController()
-                                eventController.event = event
-                                eventController.eventStore = self.eventStore
-                                eventController.editViewDelegate = self
-                                self.present(eventController, animated: true, completion: nil)
-                                
-                            }
-                        }
-                    })
-        
-            configure()
-            configureOCR()
-        }
-    }
     
     
     @objc private func scanDocument() {
