@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0A7FC127051AEC00646504 /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = BE0A7FC027051AEC00646504 /* CalendarKit */; };
 		BE1B7B34266843AD00169C4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B7B33266843AD00169C4D /* AppDelegate.swift */; };
 		BE1B7B382668443400169C4D /* OcrTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B7B372668443400169C4D /* OcrTextView.swift */; };
 		BE1B7B3A2668446B00169C4D /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B7B392668446B00169C4D /* ScanButton.swift */; };
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0A7FC127051AEC00646504 /* CalendarKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +84,9 @@
 			dependencies = (
 			);
 			name = Uptodate;
+			packageProductDependencies = (
+				BE0A7FC027051AEC00646504 /* CalendarKit */,
+			);
 			productName = uptoDate;
 			productReference = BE40A3B026EAC2EA00D19892 /* Uptodate.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +115,9 @@
 				Base,
 			);
 			mainGroup = BE1B7AF8266842E100169C4D;
+			packageReferences = (
+				BE0A7FBF27051AEC00646504 /* XCRemoteSwiftPackageReference "CalendarKit" */,
+			);
 			productRefGroup = BE1B7AF8266842E100169C4D;
 			projectDirPath = "";
 			projectRoot = "";
@@ -332,6 +340,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BE0A7FBF27051AEC00646504 /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/richardtop/CalendarKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.13;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BE0A7FC027051AEC00646504 /* CalendarKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE0A7FBF27051AEC00646504 /* XCRemoteSwiftPackageReference "CalendarKit" */;
+			productName = CalendarKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BE1B7AF9266842E100169C4D /* Project object */;
 }

@@ -12,7 +12,7 @@ import EventKit
 import EventKitUI
 import SwiftUI
 
-class ViewController: UIViewController, EKEventEditViewDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController {
     
     
     @objc private var scanButton = ScanButton(frame: .zero)
@@ -25,38 +25,6 @@ class ViewController: UIViewController, EKEventEditViewDelegate, UINavigationCon
     let eventStore = EKEventStore()
     var time = Date()
     
-    //This functions handles the calendar view and authorisation
-    @objc private func viewCalendar() {
-        //let eventVC = EKEventEditViewController()
-        //eventVC.editViewDelegate = self
-        //eventVC.eventStore = EKEventStore()
-        let eventStore = EKEventEditViewController()
-        eventStore.delegate = self
-        present(eventStore, animated: true)
-        func viewDidLoad() {
-            super.viewDidLoad()
-            eventStore.requestAccess( to: EKEntityType.event, completion:{(granted, error) in
-                        DispatchQueue.main.async {
-                            if (granted) && (error == nil) {
-                                let event = EKEvent(eventStore: self.eventStore)
-                                event.title = ""
-                                event.startDate = self.time
-                                event.url = URL(string: "")
-                                event.endDate = self.time
-                                let eventController = EKEventEditViewController()
-                                eventController.event = event
-                                eventController.eventStore = self.eventStore
-                                eventController.editViewDelegate = self
-                                self.present(eventController, animated: true, completion: nil)
-                                
-                            }
-                        }
-                    })
-        
-            configure()
-            configureOCR()
-        }
-    }
     
     //This function handles the completion of the created event.
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
@@ -65,20 +33,20 @@ class ViewController: UIViewController, EKEventEditViewDelegate, UINavigationCon
     
     
     //This function checks if user granted access to Calendar plus creates an event with the below details
-    /*override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         eventStore.requestAccess( to: EKEntityType.event, completion:{(granted, error) in
                     DispatchQueue.main.async {
                         if (granted) && (error == nil) {
-                            let event = EKEvent(eventStore: self.eventStore)
-                            event.title = ""
-                            event.startDate = self.time
-                            event.url = URL(string: "")
-                            event.endDate = self.time
+                            _ = EKEvent(eventStore: self.eventStore)
+                            //event.title = ""
+                            //event.startDate = self.time
+                            //event.url = URL(string: "")
+                            //event.endDate = self.time
                             let eventController = EKEventEditViewController()
-                            eventController.event = event
-                            eventController.eventStore = self.eventStore
-                            eventController.editViewDelegate = self
+                            //eventController.event = event
+                            //eventController.eventStore = self.eventStore
+                            //eventController.editViewDelegate = self
                             self.present(eventController, animated: true, completion: nil)
                             
                         }
@@ -87,7 +55,7 @@ class ViewController: UIViewController, EKEventEditViewDelegate, UINavigationCon
     
         configure()
         configureOCR()
-    }*/
+    }
 
     //This function prepends the below items on screen
     private func configure() {
@@ -120,7 +88,7 @@ class ViewController: UIViewController, EKEventEditViewDelegate, UINavigationCon
         ])
         
         scanButton.addTarget(self, action: #selector(scanDocument), for: .touchUpInside)
-        calendarButton.addTarget(self, action: #selector(viewCalendar), for: .touchUpInside)
+        calendarButton.addTarget(self, action: #selector(viewDidLoad), for: .touchUpInside)
     }
     
     
